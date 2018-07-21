@@ -1,0 +1,215 @@
+//VARIABLES
+$textcolor: #414141;
+$strongcolor: #212121;
+$heavyweight: 700;
+$backgroundcolor: #fafafa;
+$blockcolor: #eaeaea;
+$linkcolor: #2177d4;
+$linkhover: #d43921;
+$altfont: "Courier New", "Courier", monospace;
+$bordercolor: #c3c3c3;
+$highlightcolor: #d8d8d8;
+
+body {
+  font-size: 18px;
+  background-color: $backgroundcolor;
+  max-width: 40em;
+  max-width: 1140px;
+  margin: 0 auto;
+  color: $textcolor;
+  font-family: "Arial", "Helvetica", sans-serif;
+  line-height: 1.5;
+  /*MDN recommends unitless heights*/
+  margin-bottom: 15px;
+}
+/* TEXT */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $heavyweight;
+  color: $strongcolor;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: $linkcolor;
+
+  &:hover {
+    color: $linkhover;
+  }
+}
+
+q {
+  background-color: $highlightcolor;
+}
+
+blockquote,
+pre {
+  border-left: 3px solid $textcolor;
+  background-color: $blockcolor;
+  margin: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
+code {
+  font-family: $altfont;
+  counter-reset: line;
+  white-space: pre-wrap;
+
+  span {
+    display: inline-block;
+    margin-left: 30px;
+    &:before {
+      // REPOSITION CODE COUNT ON EDGE OF BLOCK
+      margin-left: -30px;
+      // PUSH CODE AWAY FROM BORDER
+      margin-right: 10px;
+      counter-increment: line;
+      content: counter(line);
+      display: inline-block;
+      border-right: 1px solid #ddd;
+      color: #888;
+      min-width: 30px;
+    }
+  }
+}
+
+hr {
+  border-color: $textcolor;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  padding: 5px;
+  margin: 0;
+  background-color: $blockcolor;
+}
+
+figcaption {
+  margin: 5px 0;
+}
+/* INPUT */
+/*
+button {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 1.2rem;
+  margin: 5px 0;
+  background-color: #fff;
+  width: auto;
+  cursor: pointer;
+
+  &:disabled {
+    border-color: #aaa;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+*/
+
+label {
+  margin: 5px 0;
+  display: inline-block;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"] textarea,
+input[type="text"],
+input[type="textbox"],
+input[type="url"],
+input[type="search"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 7px;
+  border: 1px solid $bordercolor;
+  border-radius: 3px;
+
+  &:focus {
+    box-shadow: 0 0 9px $linkcolor;
+    transition: box-shadow 0.1s;
+    //border-color: $linkcolor;
+    outline: 0;
+  }
+
+  &:disabled {
+    background-color: $blockcolor;
+  }
+
+  &:invalid {
+    border-color: $linkhover;
+  }
+}
+
+input[type="button"],
+input[type="file"],
+input[type="reset"],
+button {
+  border: 1px solid $strongcolor;
+  border-radius: 3px;
+  padding: 5px;
+
+  font-size: 1.2rem;
+  margin: 5px 0;
+  background-color: #fff;
+  width: auto;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 9px $linkcolor;
+    transition: box-shadow 0.1s;
+  }
+}
+
+input[type="file"] {
+  padding: 2px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
